@@ -1,0 +1,22 @@
+.categoriesWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 5px;
+}
+.categorie > * {
+  flex: 1;
+}
+.categori {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  text-align: center;
+  padding: 16px;
+  width: 100%;
+  border: 1px solid #333;
+}
+@media (max-width : 768px) {
+  .categoriesWrapper {
+    flex-wrap: wrap;
+  }
+}
