@@ -4,18 +4,16 @@ import MovieContainer from "@/src/containers/movies";
 import Movies from "@/src/app/mocks/movies.json";
 
 import { notFound } from "next/navigation";
+import { getMovie } from "@/services/movie";
+const BASE_URL = "https://api.themoviedb.org/3";
 
-function MoviePage({ params, searchParams }) {
-  const movieDetail = Movies.results.find(
-    (movie) => movie.id.toString() === params.id
-  );
+async function MoviePage({ params, searchParams }) {
+  const movieDetail = await getMovie(params.id);
 
   if (!movieDetail) {
     notFound();
   }
-  if (searchParams.error === "true") {
-    throw new Error("Error happened");
-  }
+  
   return <MovieContainer movie={movieDetail} />;
 }
 

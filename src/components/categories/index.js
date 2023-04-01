@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./styles.module.css";
 function Categories({ categories }) {
    
+   
   return (
     <div className={styles.categoriesWrapper}>
       {categories.map((item, index) => (
